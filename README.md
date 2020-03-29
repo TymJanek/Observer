@@ -1,6 +1,4 @@
-# Observer
-Zadanie drugie na branchu 'observer'
-
+# Observer and Observable
 
 Odpowiedzi: 
 
