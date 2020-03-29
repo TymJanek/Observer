@@ -4,8 +4,8 @@ public class Service {
 
     public static void main(String[] args) {
         Magazine magazine = new Magazine();
-        Consumer consumer = new Consumer();
-        Manufacturer manufacturer = new Manufacturer();
+        Consumer consumer = new Consumer(magazine);
+        Manufacturer manufacturer = new Manufacturer(magazine);
 
         magazine.addConsumer(consumer);
         magazine.addManufacturer(manufacturer);
@@ -13,10 +13,10 @@ public class Service {
         try{
             while(true){
                 if(magazine.find() <= 10){
-                    magazine.notifyManufacturers();
+                    manufacturer.update(magazine, manufacturer);
                 }
                 if(magazine.find() != 0){
-                    magazine.notifyConsumers();
+                    consumer.update(magazine, consumer);
                 }
                 sleep(1000);
             }
